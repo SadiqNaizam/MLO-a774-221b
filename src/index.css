@@ -1,57 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 205 47% 88%; /* PRD background: #DEEAF3 */
+    --foreground: 0 0% 8%;    /* PRD primaryText: #151515 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --font-sans: "Nunito", sans-serif; /* PRD typography primaryFont */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;         /* PRD surface: #FFFFFF */
+    --card-foreground: 0 0% 8%;/* PRD primaryText: #151515 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;      /* PRD surface: #FFFFFF */
+    --popover-foreground: 0 0% 8%;/* PRD primaryText: #151515 */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 100%;       /* PRD buttonBackground: #FFFFFF */
+    --primary-foreground: 0 0% 8%;/* PRD buttonText: #151515 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Secondary: Using a neutral light gray, with PRD primaryText as foreground */
+    --secondary: 0 0% 96%; 
+    --secondary-foreground: 0 0% 8%; /* PRD primaryText: #151515 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 100%;           /* PRD surface: #FFFFFF (assuming muted elements are on surface) */
+    --muted-foreground: 228 10% 63%;/* PRD secondaryText: #878A99 */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 40 100% 67%;        /* PRD accentYellow: #FFC857 */
+    --accent-foreground: 0 0% 8%; /* PRD primaryText: #151515 (for text on accent) */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;    /* Unchanged from original, PRD doesn't specify */
+    --destructive-foreground: 210 40% 98%; /* Unchanged from original */
 
-    --radius: 0.5rem;
+    --border: 214.3 31.8% 91.4%;     /* Unchanged from original, assuming for card/surface borders */
+    --input: 214.3 31.8% 91.4%;      /* Unchanged from original, for input fields on card/surface */
+    --ring: 40 100% 67%;          /* PRD accentYellow: #FFC857 for focus rings */
 
+    --radius: 0.5rem; /* PRD effects.borderRadius.default is 'rounded-lg' (0.5rem) */
+
+    /* Sidebar variables from original file - preserved as PRD doesn't cover sidebars */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
+    /* Dark mode variables from original file - preserved as PRD does not specify a dark theme. */
+    /* These values would ideally be reviewed/updated if a dark theme was designed. */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -97,5 +98,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
